@@ -720,7 +720,7 @@ object FastParser extends PosParser[Char, String] {
     // quantification
     "forall", "exists", "forperm",
     // permission syntax
-    "acc", "wildcard", "write", "none", "epsilon", "perm",
+    "acc", "wildcard", "sWildcard", "write", "none", "epsilon", "perm",
     // modifiers
     "unique") | ParserExtension.extendedKeywords
 
@@ -859,8 +859,8 @@ object FastParser extends PosParser[Char, String] {
   lazy val inhaleExhale: P[PExp] = P("[" ~ exp ~ "," ~ exp ~ "]").map { case (a, b) => PInhaleExhaleExp(a, b) }
 
   lazy val perm: P[PExp] =
-    P(keyword("none").map(_ => PNoPerm()) | keyword("wildcard").map(_ => PWildcard()) | keyword("write").map(_ => PFullPerm())
-    | keyword("epsilon").map(_ => PEpsilon()) | ("perm" ~ parens(resAcc)).map(PCurPerm))
+    P(keyword("none").map(_ => PNoPerm()) | keyword("wildcard").map(_ => PWildcard()) | keyword("sWildcard").map(_ => PSWildcard())
+    | keyword("write").map(_ => PFullPerm()) | keyword("epsilon").map(_ => PEpsilon()) | ("perm" ~ parens(resAcc)).map(PCurPerm))
 
   lazy val let: P[PExp] = P(
     ("let" ~/ idndef ~ "==" ~ "(" ~ exp ~ ")" ~ "in" ~ exp).map { case (id, exp1, exp2) =>

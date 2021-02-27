@@ -66,6 +66,7 @@ object Transformer {
         case _: PNoPerm => parent
         case _: PFullPerm => parent
         case _: PWildcard => parent
+        case _: PSWildcard => parent
         case _: PEpsilon => parent
         case PAccPred(loc, perm) => PAccPred(go(loc), go(perm))
         case POld(e) => POld(go(e))

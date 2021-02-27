@@ -7,7 +7,7 @@
 package viper.silver.plugin.standard.predicateinstance
 
 import fastparse.noApi
-import viper.silver.ast.{Domain, DomainType, ErrTrafo, FuncApp, Function, Position, PredicateAccess, PredicateAccessPredicate, Program, WildcardPerm}
+import viper.silver.ast.{Domain, DomainType, ErrTrafo, FuncApp, Function, Position, PredicateAccess, PredicateAccessPredicate, Program, WildcardPerm, SWildcardPerm}
 import viper.silver.ast.utility.ViperStrategy
 import viper.silver.ast.utility.rewriter.Traverse
 import viper.silver.parser.FastParser._

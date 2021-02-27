@@ -451,6 +451,8 @@ case class Translator(program: PProgram) {
         FullPerm()(pos)
       case PWildcard() =>
         WildcardPerm()(pos)
+      case PSWildcard() =>
+        SWildcardPerm()(pos)
       case PEpsilon() =>
         EpsilonPerm()(pos)
       case PAccPred(loc, perm) =>

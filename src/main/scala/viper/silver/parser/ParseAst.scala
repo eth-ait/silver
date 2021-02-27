@@ -793,6 +793,7 @@ case class PCurPerm(res: PResourceAccess) extends PHeapOpApp{
 case class PNoPerm() extends PSimpleLiteral{typ = Perm}
 case class PFullPerm() extends PSimpleLiteral{typ = Perm}
 case class PWildcard() extends PSimpleLiteral{typ = Perm}
+case class PSWildcard() extends PSimpleLiteral{typ = Perm}
 case class PEpsilon() extends PSimpleLiteral{typ = Perm}
 case class PAccPred(loc: PLocationAccess, perm: PExp) extends POpApp {
   override val opName = "acc"
@@ -1149,6 +1150,7 @@ object Nodes {
       case PNoPerm() => Nil
       case PFullPerm() => Nil
       case PWildcard() => Nil
+      case PSWildcard() => Nil
       case PEpsilon() => Nil
       case PAccPred(loc, perm) => Seq(loc, perm)
       case PEmptySeq(_) => Nil

@@ -199,10 +199,11 @@ exp ::=
 	"[" ident "]" "(" exp ")"   // labeled old expression
 	"lhs" "(" exp ")"           // apply old expression
 
-	"none"     |             // no permission literal
-	"write"    |             // full permission literal
-	"epsilon"  |             // epsilon permission literal
-	"wildcard" |             // wildcard permission
+	"none"      |            	// no permission literal
+	"write"     |            	// full permission literal
+	"epsilon"   |            	// epsilon permission literal
+	"wildcard"  |            	// wildcard permission
+	"sWildcard" |            	// symbolic wildcard permission
 	
 	"perm" "(" loc-access ")" | // current permission
 	                            //  of given location

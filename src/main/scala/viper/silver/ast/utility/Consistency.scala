@@ -335,6 +335,10 @@ object Consistency {
       case wp@WildcardPerm() if !c.insideAccessPredicateStatus =>
         s :+= ConsistencyError("\"wildcard\" can only be used in accessibility predicates", wp.pos)
         c
+      
+      case swp@SWildcardPerm() if !c.insideAccessPredicateStatus =>
+        s :+= ConsistencyError("\"symbolic wildcard\" can only be used in accessibility predicates", swp.pos)
+        c
     })
     s
   }

@@ -307,6 +307,9 @@ sealed trait PermExp extends Exp {
 /** A wild card permission. Has an unknown value, but there are no guarantees that it will be the same inside one method. */
 case class WildcardPerm()(val pos: Position = NoPosition, val info: Info = NoInfo, val errT: ErrorTrafo = NoTrafos) extends PermExp
 
+/** A wild card permission. Has an unknown value, but there are no guarantees that it will be the same inside one method. */
+case class SWildcardPerm()(val pos: Position = NoPosition, val info: Info = NoInfo, val errT: ErrorTrafo = NoTrafos) extends PermExp
+
 /** The full permission. */
 case class FullPerm()(val pos: Position = NoPosition, val info: Info = NoInfo, val errT: ErrorTrafo = NoTrafos) extends AbstractConcretePerm(1, 1)
 
